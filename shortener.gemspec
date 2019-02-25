@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "voight_kampff", '~> 1.1.2'
 
   s.add_development_dependency "rails", '>= 3'
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "nobrainer"
   s.add_development_dependency "rspec-rails", '~> 3.6.0'
   s.add_development_dependency "shoulda-matchers"
   s.add_development_dependency "faker"
