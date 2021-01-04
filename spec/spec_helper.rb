@@ -7,19 +7,20 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'byebug'
 require 'faker'
+require 'nobrainer'
 
 Rails.backtrace_cleaner.remove_silencers!
 
 Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
+    config.integrate do |with|
+        with.test_framework :rspec
+        with.library :rails
+    end
 end
 
 # Run any available migration
-if ActiveRecord::Migrator.respond_to?(:migrate)
-  ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
-else
-  ActiveRecord::MigrationContext.new(File.expand_path("../dummy/db/migrate/", __FILE__)).migrate
-end
+# if ActiveRecord::Migrator.respond_to?(:migrate)
+#   ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
+# else
+#   ActiveRecord::MigrationContext.new(File.expand_path("../dummy/db/migrate/", __FILE__)).migrate
+# end
